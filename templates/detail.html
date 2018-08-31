@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+<script>
+    $(function () {
+        var content = '${blog.article}';
+        content = content.replace(/\n|\r\n/g,'<br>');
+    })
+</script>
+
+{% block content %}
+    {% csrf_token %}
+
+    <h2>{{ article.title }}</h2>
+
+    {{ article.content|linebreaksbr }}
+{#    linebreaksbr加上这句是为了换行问题#}
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+    <h1>注册页面</h1>
+    <form method="POST" enctype="multipart/form-data" action="">
+    {% csrf_token %}
+
+    {{ uf.as_p }}
+        <input type="submit" value="ok">
+
+    </form>
+
+{% endblock %}

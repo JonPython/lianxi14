@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div>
+        <form action="/login/" method="POST">
+            {% csrf_token %}
+            <h2>请登录！</h2>
+            <input type="text" name="username">
+            <input type="password" name="password">
+            <button type="submit">登入</button>
+            <p style="color:orangered">{{ login_error }}</p>
+        </form>
+</div>
+
+{% endblock %}
